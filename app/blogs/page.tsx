@@ -12,12 +12,15 @@ export const metadata: Metadata = {
     "Every Market Trends story in one place. Browse the latest posts and filter by category — markets, business, lifestyle, sport and more.",
 };
 
-/** Keep only genuine published Signalor rows — never placeholder/test rows. */
+/** Keep only genuine published Signalor rows — never placeholder/test rows.
+ *  The list endpoint returns summaries WITHOUT content_html, so only gate on
+ *  body length when a body is actually present (i.e. never drop a valid summary). */
 function isRealDbPost(r: BlogRow): boolean {
   const title = (r.title ?? "").trim();
-  const text = (r.content_html ?? "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
   if (!title || /^test\b/i.test(title)) return false;
-  return text.length >= 140;
+  const text = (r.content_html ?? "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+  if (text && text.length < 140) return false;
+  return true;
 }
 
 /** Convert a published Signalor post into the listing's BlogPost shape. */
