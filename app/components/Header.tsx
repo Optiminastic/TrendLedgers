@@ -34,9 +34,20 @@ export default function Header() {
       {/* Center: logo */}
       <Link
         href="#"
-        className="font-display text-3xl font-black tracking-tight text-foreground sm:text-4xl"
+        className="flex items-center gap-2.5 font-display text-3xl font-black tracking-tight text-foreground sm:text-4xl"
       >
-        Market Trends
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          aria-hidden="true"
+          className="shrink-0"
+        >
+          <path d="M5 22 L13 14 L18 18 L27 8" stroke="#1d6fa5" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M21 8 H27 V14" stroke="#1d6fa5" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        Trend Ledgers
       </Link>
 
       {/* Right: actions */}

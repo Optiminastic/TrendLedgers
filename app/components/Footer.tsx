@@ -19,7 +19,7 @@ export default function Footer() {
     <footer className="mt-16 border-t-2 border-rule bg-[#111] text-white">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-4 py-12 text-center">
         <Link href="#" className="font-display text-3xl font-black tracking-tight">
-          Market Trends
+          Trend Ledgers
         </Link>
         <p className="max-w-xl font-serif text-sm leading-relaxed text-white/70">
           The latest market news, trending stories and the popular topics shaping
@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
 
         <p className="text-xs text-white/50">
-          © {2025} Market Trends. All rights reserved.
+          © {2025} Trend Ledgers. All rights reserved.
         </p>
       </div>
     </footer>

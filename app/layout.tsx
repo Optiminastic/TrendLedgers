@@ -22,10 +22,69 @@ const playfair = Playfair_Display({
   weight: ["400", "500", "700", "800", "900"],
 });
 
+const SITE_URL = "https://trendledgers.com";
+
 export const metadata: Metadata = {
-  title: "Market Trends — Latest News, Trending & Popular Stories",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Trend Ledgers — Market News, Trends & What's-Next Analysis",
+    template: "%s | Trend Ledgers",
+  },
   description:
-    "Market Trends covers the latest market news, trending stories, and popular topics across business, lifestyle, sport and more.",
+    "Trend Ledgers is a market & finance journal covering the latest news, trends and what's-next analysis across markets, business, lifestyle and sport.",
+  applicationName: "Trend Ledgers",
+  keywords: [
+    "market trends",
+    "business news",
+    "finance",
+    "market analysis",
+    "trending stories",
+    "markets",
+    "what's next",
+    "stock market",
+    "economy",
+  ],
+  authors: [{ name: "Trend Ledgers" }],
+  creator: "Trend Ledgers",
+  publisher: "Trend Ledgers",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Trend Ledgers",
+    url: SITE_URL,
+    locale: "en_US",
+    title: "Trend Ledgers — Market News, Trends & What's-Next Analysis",
+    description:
+      "A market & finance journal covering the latest news, trends and what's-next analysis across markets, business, lifestyle and sport.",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Trend Ledgers — Market news, trends & what's-next analysis",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trend Ledgers — Market News, Trends & What's-Next Analysis",
+    description:
+      "A market & finance journal covering the latest news, trends and what's-next analysis across markets, business, lifestyle and sport.",
+    images: ["/opengraph-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({

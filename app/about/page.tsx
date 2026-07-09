@@ -2,10 +2,39 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "../components/PageHero";
 
+const SITE_URL = "https://trendledgers.com";
+
 export const metadata: Metadata = {
-  title: "About — Market Trends",
+  title: "About",
   description:
-    "Market Trends is an independent blog covering the latest market news, trending stories and the popular topics shaping business, lifestyle and sport.",
+    "Trend Ledgers is an independent market & finance journal covering the latest news, trends and what's-next analysis across business, lifestyle and sport.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    type: "website",
+    title: "About | Trend Ledgers",
+    description:
+      "Trend Ledgers is an independent market & finance journal covering the latest news, trends and what's-next analysis across business, lifestyle and sport.",
+    url: `${SITE_URL}/about`,
+    siteName: "Trend Ledgers",
+    locale: "en_US",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "About Trend Ledgers",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About | Trend Ledgers",
+    description:
+      "Trend Ledgers is an independent market & finance journal covering markets, business, lifestyle and sport.",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 const values = [
@@ -28,13 +57,13 @@ export default function AboutPage() {
     <main className="flex-1">
       <PageHero
         eyebrow="About Us"
-        title="About Market Trends"
-        description="Market Trends is an independent blog about what's moving in the markets and the wider world — the latest news, trending stories and the popular topics worth following."
+        title="About Trend Ledgers"
+        description="Trend Ledgers is an independent blog about what's moving in the markets and the wider world — the latest news, trending stories and the popular topics worth following."
       />
 
       <div className="mx-auto w-full max-w-3xl px-4 py-12">
         <p className="font-serif text-lg leading-relaxed text-foreground/85">
-          We started Market Trends with a simple idea: the things shaping our
+          We started Trend Ledgers with a simple idea: the things shaping our
           money, our work and our daily lives are all connected. Markets move
           business, business moves lifestyle, and trends ripple across sport,
           travel and culture. We follow those threads and write them up in a way

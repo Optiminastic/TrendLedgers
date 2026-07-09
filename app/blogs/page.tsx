@@ -6,10 +6,39 @@ import { getPosts, formatDate, type BlogRow } from "../lib/blog-db";
 
 export const revalidate = 300;
 
+const SITE_URL = "https://trendledgers.com";
+
 export const metadata: Metadata = {
-  title: "Blogs — Market Trends",
+  title: "Blogs",
   description:
-    "Every Market Trends story in one place. Browse the latest posts and filter by category — markets, business, lifestyle, sport and more.",
+    "Every Trend Ledgers story in one place. Browse the latest posts and filter by category — markets, business, lifestyle, sport and more.",
+  alternates: {
+    canonical: "/blogs",
+  },
+  openGraph: {
+    type: "website",
+    title: "Blogs | Trend Ledgers",
+    description:
+      "Every Trend Ledgers story in one place. Browse the latest posts and filter by category — markets, business, lifestyle, sport and more.",
+    url: `${SITE_URL}/blogs`,
+    siteName: "Trend Ledgers",
+    locale: "en_US",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Trend Ledgers — all stories",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blogs | Trend Ledgers",
+    description:
+      "Every Trend Ledgers story in one place. Browse the latest posts and filter by category.",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 /** Keep only genuine published Signalor rows — never placeholder/test rows.
